@@ -1,0 +1,23 @@
+
+<Page loaded="onPageLoaded">
+
+   
+     <ActionBar title="ActionBar Title" icon="">
+        
+      <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
+    </ActionBar>
+    <GridLayout rows="*,60" columns="*" width="100%">
+   
+
+            <Image src="{{imageSource}}" ></Image>
+
+
+
+            <StackLayout>
+            <Label text="{{codigo}}" class="h2 text-center" backgroundColor="yellow"/>
+            </StackLayout>
+   
+
+   
+    </GridLayout>
+</Page>

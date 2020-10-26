@@ -1,0 +1,22 @@
+<page navigatingTo="onPageNavigatingTo"
+    xmlns:df="nativescript-ui-dataform">
+
+<ActionBar title="Comunicar diagnóstico"></ActionBar>
+
+
+    <!-- <StackLayout class="nt-form">
+      
+        
+       <TextField hint="Option 4" class="-border" />
+
+       <TextField hint="Option 4" class="-border" />
+
+        <Button text="Enviar" class="btn-submit" tap="onSubmitTap"></Button>    
+    </StackLayout> -->
+
+
+
+
+    <df:RadDataForm id="myDataForm" source="{{ person }}" />
+
+</page>

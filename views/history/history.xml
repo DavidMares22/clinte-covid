@@ -1,0 +1,16 @@
+<page loaded="onPageLoaded">
+  <ActionBar title="ActionBar Title" icon="">
+        
+      <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
+    </ActionBar>
+    <StackLayout>
+      <!-- <Button  class="btn" text="Regresar al Menu" tap="backHome"/> -->
+        <ListView items="{{taskList}}"  orientation="vertical" height="650" >
+
+          <ListView.itemTemplate>
+              <Label text="{{title}}" horizontalAlignment="left" verticalAlignment="center" />
+          </ListView.itemTemplate>
+
+        </ListView>
+    </StackLayout>
+</page>

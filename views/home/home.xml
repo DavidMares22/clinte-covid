@@ -1,0 +1,15 @@
+<page loaded="onPageLoaded">
+
+
+<ActionBar title="Aplicacion cliente"></ActionBar>
+    <StackLayout>
+        <Label text="{{codigo}}" width="100%" class="h2 text-center" backgroundColor="yellow"/>
+        
+        <Button class="btn" text="Ver codigo QR" tap="goQR" ></Button>
+        <Button class="btn" text="Comunicar diagnóstico" tap="goContact" ></Button>
+        <Button class="btn" text="Historial" tap="goToHistory" ></Button>
+        
+        <Button text="remover codigo" class="bg-danger" tap="removerCodigo" ></Button>
+    </StackLayout>
+</page>
+
