@@ -5,16 +5,16 @@
 
 
 
-<DatePicker year="1980" month="4" day="20" class="date-picker" id="date" loaded="onDatePickerLoaded"></DatePicker>
-<!-- <DatePicker minDate="{{minDate}}"
+<!-- <DatePicker year="1980" month="4" day="20" class="date-picker" id="date" loaded="onDatePickerLoaded"></DatePicker> -->
+<DatePicker minDate="{{minDate}}"
             maxDate="{{maxDate}}"
             loaded="onDatePickerLoaded"
             verticalAlignment="center"
             id="date" >
-</DatePicker> -->
+</DatePicker>
 
 
-<Label text="hola" class="h2 text-center" backgroundColor="yellow" id="txt"/>
+
 <Button text="Get Tap" tap="getTap" />  
 
 </StackLayout>

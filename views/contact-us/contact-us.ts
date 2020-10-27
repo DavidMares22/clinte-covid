@@ -19,17 +19,17 @@ exports.onPageLoaded = function(args){
 
 exports.onDatePickerLoaded = function(args){
 
-    //  page = args.object;
-    //  page.bindingContext = {
-        //      minDate:minDate,
-        //      maxDate:maxDate,
+     page = args.object;
+     page.bindingContext = {
+             minDate:minDate,
+             maxDate:maxDate,
         
-        //  }
+         }
     }
     
  
 
 exports.getTap = function () {
-    var bottle = page.getViewById("txt");
-    console.log("Height: " + bottle.text);
+    date = page.getViewById("date");
+    alert(date.date);
  }
