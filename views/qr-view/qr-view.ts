@@ -5,9 +5,9 @@ const httpModule = require("tns-core-modules/http");
 const appSettings = require("tns-core-modules/application-settings");
 
 
-let page
 
-let userCode
+var page
+var userCode
 
 exports.onPageLoaded = function(args){
    

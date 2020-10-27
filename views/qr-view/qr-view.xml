@@ -2,7 +2,7 @@
 <Page loaded="onPageLoaded">
 
    
-     <ActionBar title="ActionBar Title" icon="">
+     <ActionBar title="codigo QR generado" icon="">
         
       <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
     </ActionBar>

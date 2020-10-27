@@ -1,10 +1,15 @@
-import { Label } from "@nativescript/core";
 
 
-let page
+
+// function getCheckProp() {
+//   const checkBox = page.getViewById('myCheckbox');
+//   console.log('checked prop value = ' + checkBox.checked);
+// }
+
 let date
 let maxDate = new Date();
 let minDate = new Date();
+var page
 
 minDate.setDate(maxDate.getDate()-5)
 
@@ -31,5 +36,12 @@ exports.onDatePickerLoaded = function(args){
 
 exports.getTap = function () {
     date = page.getViewById("date");
-    alert(date.date);
+    const checkBox = page.getViewById('myCheckbox');
+    alert(date.date+ '\n' +' valor de checkbx = ' + checkBox.checked);
+
+    //   console.log('checked prop value = ' + checkBox.checked);
  }
+
+ exports.backHome = function(){    
+    page.frame.goBack()
+   }

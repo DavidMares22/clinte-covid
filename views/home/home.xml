@@ -1,7 +1,11 @@
 <page loaded="onPageLoaded">
 
 
-<ActionBar title="Aplicacion cliente"></ActionBar>
+<!-- <ActionBar title="SCAE" class="text-center"></ActionBar> -->
+<ActionBar>
+<Label text="SCAE" width="100%" class="h2 text-center" />
+</ActionBar>
+
     <StackLayout>
         <Label text="{{codigo}}" width="100%" class="h2 text-center" backgroundColor="yellow"/>
         
@@ -9,7 +13,7 @@
         <Button class="btn" text="Comunicar diagnóstico" tap="goContact" ></Button>
         <Button class="btn" text="Historial" tap="goToHistory" ></Button>
         
-        <Button text="remover codigo" class="bg-danger" tap="removerCodigo" ></Button>
+        <!-- <Button text="remover codigo" class="bg-danger" tap="removerCodigo" ></Button> -->
     </StackLayout>
 </page>
 
