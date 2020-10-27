@@ -5,7 +5,7 @@ const httpModule = require("tns-core-modules/http");
 const appSettings = require("tns-core-modules/application-settings");
 
 
-var page
+let page
 
 let userCode
 

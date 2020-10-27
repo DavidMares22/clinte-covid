@@ -1,22 +1,21 @@
-<page navigatingTo="onPageNavigatingTo"
-    xmlns:df="nativescript-ui-dataform">
 
-<ActionBar title="Comunicar diagnóstico"></ActionBar>
+<page loaded="onPageLoaded">
 
-
-    <!-- <StackLayout class="nt-form">
-      
-        
-       <TextField hint="Option 4" class="-border" />
-
-       <TextField hint="Option 4" class="-border" />
-
-        <Button text="Enviar" class="btn-submit" tap="onSubmitTap"></Button>    
-    </StackLayout> -->
+<StackLayout>
 
 
 
+<DatePicker year="1980" month="4" day="20" class="date-picker" id="date" loaded="onDatePickerLoaded"></DatePicker>
+<!-- <DatePicker minDate="{{minDate}}"
+            maxDate="{{maxDate}}"
+            loaded="onDatePickerLoaded"
+            verticalAlignment="center"
+            id="date" >
+</DatePicker> -->
 
-    <df:RadDataForm id="myDataForm" source="{{ person }}" />
 
+<Label text="hola" class="h2 text-center" backgroundColor="yellow" id="txt"/>
+<Button text="Get Tap" tap="getTap" />  
+
+</StackLayout>
 </page>
