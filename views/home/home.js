@@ -1,5 +1,5 @@
 
-const appSettings = require("tns-core-modules/application-settings");
+var appSettings = require("tns-core-modules/application-settings");
 
 let page;
 
@@ -22,7 +22,8 @@ function onPageLoaded(args) {
 
 
 exports.removerCodigo = function(){    
-
+     
+    appSettings.remove("vistoTerminos")
     page.bindingContext = {
         codigo:appSettings.remove("userCode")
     }

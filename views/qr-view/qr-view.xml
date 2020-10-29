@@ -12,10 +12,10 @@
             <Image src="{{imageSource}}" ></Image>
 
 
-
+<!-- 
             <StackLayout>
             <Label text="{{codigo}}" class="h2 text-center" backgroundColor="yellow"/>
-            </StackLayout>
+            </StackLayout> -->
    
 
    

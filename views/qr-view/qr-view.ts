@@ -2,7 +2,7 @@
 const { ImageSource } = require("tns-core-modules/image-source");
 const {QrGenerator} = require("nativescript-qr-generator");
 const httpModule = require("tns-core-modules/http");
-const appSettings = require("tns-core-modules/application-settings");
+var appSettings = require("tns-core-modules/application-settings");
 
 
 
@@ -18,7 +18,7 @@ exports.onPageLoaded = function(args){
 
     // verificar que existe la variable codeUser
     if(userCode==='vacio'){
-      alert('El userCode estaba ' + userCode)
+      // alert('El userCode estaba ' + userCode)
       // codigo vacio, hacer la peticion al servidor
       obtenerCodigo().then((codigo) =>{
              
@@ -56,17 +56,16 @@ function obtenerCodigo(){
   return new Promise((resolve,reject) => {
     
     httpModule.request({
-      url: "http://10.0.2.2:8000/api/codigos",
+      // url: "http://10.0.2.2:8000/api/codigos",
+      url: "https://www.covidcinvestav.com/index.php?r=individuo/getcode",
       // url: "http://192.168.1.64:8000/api/codigos",
-      method: "POST",
+      method: "GET",
       headers: { "Content-Type": "application/json" },
-      content: JSON.stringify({
-          clave:''
-      })
       }).then(response => {
         return response.content.toJSON()
 
       }).then(data => {
+        
         resolve(data['clave']);
 
       }).catch((e) => {
