@@ -1,18 +1,31 @@
+
 <page loaded="onPageLoaded"  navigatedTo="onNavigatedTo" xmlns:CheckBox="@nstudio/nativescript-checkbox">
 
 <ActionBar>
 <Label text="Aviso de privacidad" width="100%" class="h2 text-center" />
 </ActionBar>
 
+    
+<GridLayout rows="300,*" columns="*">
+
+ <ScrollView height="300" orientation="vertical">
     <StackLayout>
-        <Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-         It has survived not only five centuries, but also the leap into electronic typesetting,remaining essentially unchanged. 
-         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
-         publishing software like Aldus PageMaker including versions of Lorem Ipsum" textWrap="true"/>
-        <CheckBox:CheckBox text=" He leído y acepto los términos y condiciones"  id="aceptar" />
-        
+        <Label  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget urna vitae odio semper euismod. Duis at hendrerit nisl. In fermentum mi congue erat lobortis, in congue nibh auctor. Nulla lacinia eros id consectetur fringilla. Praesent interdum libero eu mi tempus, ut varius dui bibendum. Suspendisse lobortis vel mauris at venenatis. Curabitur at nibh orci. Vivamus egestas urna ipsum, quis tincidunt risus lacinia ac. Vivamus sed turpis imperdiet felis semper elementum quis et odio. Pellentesque dapibus euismod tellus, sit amet egestas erat scelerisque sed. Sed posuere finibus nisl et aliquam. Aenean id lobortis risus. Ut ut accumsan ex. Proin eu convallis metus." textWrap="true"/>
+        <Label  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget urna vitae odio semper euismod. Duis at hendrerit nisl. In fermentum mi congue erat lobortis, in congue nibh auctor. Nulla lacinia eros id consectetur fringilla. Praesent interdum libero eu mi tempus, ut varius dui bibendum. Suspendisse lobortis vel mauris at venenatis. Curabitur at nibh orci. Vivamus egestas urna ipsum, quis tincidunt risus lacinia ac. Vivamus sed turpis imperdiet felis semper elementum quis et odio. Pellentesque dapibus euismod tellus, sit amet egestas erat scelerisque sed. Sed posuere finibus nisl et aliquam. Aenean id lobortis risus. Ut ut accumsan ex. Proin eu convallis metus." textWrap="true"/>
+        <Label  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget urna vitae odio semper euismod. Duis at hendrerit nisl. In fermentum mi congue erat lobortis, in congue nibh auctor. Nulla lacinia eros id consectetur fringilla. Praesent interdum libero eu mi tempus, ut varius dui bibendum. Suspendisse lobortis vel mauris at venenatis. Curabitur at nibh orci. Vivamus egestas urna ipsum, quis tincidunt risus lacinia ac. Vivamus sed turpis imperdiet felis semper elementum quis et odio. Pellentesque dapibus euismod tellus, sit amet egestas erat scelerisque sed. Sed posuere finibus nisl et aliquam. Aenean id lobortis risus. Ut ut accumsan ex. Proin eu convallis metus." textWrap="true"/>
+        <Label  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget urna vitae odio semper euismod. Duis at hendrerit nisl. In fermentum mi congue erat lobortis, in congue nibh auctor. Nulla lacinia eros id consectetur fringilla. Praesent interdum libero eu mi tempus, ut varius dui bibendum. Suspendisse lobortis vel mauris at venenatis. Curabitur at nibh orci. Vivamus egestas urna ipsum, quis tincidunt risus lacinia ac. Vivamus sed turpis imperdiet felis semper elementum quis et odio. Pellentesque dapibus euismod tellus, sit amet egestas erat scelerisque sed. Sed posuere finibus nisl et aliquam. Aenean id lobortis risus. Ut ut accumsan ex. Proin eu convallis metus." textWrap="true"/>
+   </StackLayout>
+</ScrollView>
+
+      
+    <StackLayout row="1" col="0">
+        <CheckBox:CheckBox text=" He leído y acepto el aviso de privacidad"  id="aceptar" />        
         <Button text="Proceder" tap="getTap"></Button>
     </StackLayout>
+</GridLayout>    
+    
+    
 </page>
+
+
 

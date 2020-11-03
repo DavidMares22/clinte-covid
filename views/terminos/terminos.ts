@@ -29,10 +29,15 @@ exports.getTap = function () {
     const checkBox = page.getViewById('aceptar');
 
     if(checkBox.checked === false){
-        alert('Debes aceptar los terminos y condiciones para proceder');
+        alert('Debes aceptar el aviso de privacidad');
     }else{
-        page.frame.navigate("views/home/home");
         appSettings.setString("vistoTerminos","Si");
+        const options1 = {
+            moduleName:"views/home/home",
+            clearHistory:true
+        }
+        page.frame.navigate(options1);
+    
     }
 
     // alert(' valor de checkbx = ' + checkBox.checked);

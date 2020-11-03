@@ -4,7 +4,7 @@
         
       <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
     </ActionBar>
-<StackLayout>
+<StackLayout class="p-20">
 
  
 

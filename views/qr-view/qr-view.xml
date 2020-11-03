@@ -2,14 +2,14 @@
 <Page loaded="onPageLoaded">
 
    
-     <ActionBar title="codigo QR generado" icon="">
+     <ActionBar title="Codigo QR generado" icon="">
         
       <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
     </ActionBar>
     <GridLayout rows="*,60" columns="*" width="100%">
-   
 
-            <Image src="{{imageSource}}" ></Image>
+        <ActivityIndicator busy="true" color="red" width="100" height="100"></ActivityIndicator>
+        <Image src="{{imageSource}}" ></Image>
 
 
 <!-- 
