@@ -9,6 +9,7 @@ let page
 var obj =  fromObject({
     taskList : new ObservableArray([
     ]), 
+    busy:true
 });
 
 
@@ -27,7 +28,7 @@ exports.onPageLoaded = function(args){
 
 function obtenerDatos(){
     httpModule.request({
-        url: "https://jsonplaceholder.typicode.com/todos/?_limit=10",
+        url: "https://jsonplaceholder.typicode.com/todos/?_limit=500",
         method: "GET"
     }).then(response => {
         return res = response.content.toJSON();
@@ -51,6 +52,7 @@ function obtenerDatos(){
                     });
                 }   
             }
+            obj.set('busy',false)
     }).catch((e) => {
         alert(e) // imprimir errores
     })

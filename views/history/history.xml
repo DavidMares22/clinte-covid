@@ -3,7 +3,7 @@
         
       <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
     </ActionBar>
-    <StackLayout>
+    <GridLayout rows="*" columns="*" width="100%">
       <!-- <Button  class="btn" text="Regresar al Menu" tap="backHome"/> -->
         <ListView items="{{taskList}}"  orientation="vertical" height="650" >
 
@@ -12,5 +12,6 @@
           </ListView.itemTemplate>
 
         </ListView>
-    </StackLayout>
+       <ActivityIndicator busy="{{busy}}" color="red" width="100" height="100"></ActivityIndicator>
+    </GridLayout>
 </page>
