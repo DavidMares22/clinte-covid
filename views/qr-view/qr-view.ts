@@ -57,10 +57,15 @@ function obtenerCodigo(){
     
     httpModule.request({
       // url: "http://10.0.2.2:8000/api/codigos",
-      url: "https://www.covidcinvestav.com/index.php?r=individuo/getcode",
+      // url: "https://www.covidcinvestav.com/index.php?r=individuo/getcode",
+      url: "https://www.covidcinvestav.com/index.php?r=api/codigo",
       // url: "http://192.168.1.64:8000/api/codigos",
-      method: "GET",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
+      content:{
+        username: "individuo",
+        pwd:"jvW13%b2020"
+      }
       }).then(response => {
         return response.content.toJSON()
 
