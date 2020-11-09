@@ -1,5 +1,7 @@
 <page loaded="onPageLoaded">
-  <ActionBar title="ActionBar Title" icon="">
+  <ActionBar>
+<Label text="Historial" width="100%" class="h2 text-center" />
+
         
       <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
     </ActionBar>
