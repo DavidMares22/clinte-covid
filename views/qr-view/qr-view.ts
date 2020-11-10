@@ -62,10 +62,10 @@ function obtenerCodigo(){
       // url: "http://192.168.1.64:8000/api/codigos",
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      content:{
-        username: "individuo",
-        pwd:"jvW13%b2020"
-      }
+      content: JSON.stringify({
+        "username": "individuo",
+        "pwd":"jvW13%b2020"
+      })
       }).then(response => {
         return response.content.toJSON()
 
