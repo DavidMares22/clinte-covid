@@ -13,7 +13,7 @@
         <Button class="btn" text="Comunicar diagnóstico" tap="goContact" ></Button>
         <Button class="btn" text="Historial" tap="goToHistory" ></Button>
         
-        <Button text="remover almacenamiento" class="bg-danger" tap="removerCodigo" ></Button>
+        <!-- <Button text="remover almacenamiento" class="bg-danger" tap="removerCodigo" ></Button> -->
     </StackLayout>
 </page>
 

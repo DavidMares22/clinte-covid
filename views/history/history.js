@@ -3,6 +3,7 @@ const fromObject = require("tns-core-modules/data/observable").fromObject;
 const ObservableArray = require("tns-core-modules/data/observable-array").ObservableArray;
 const httpModule = require("tns-core-modules/http");
 var appSettings = require("tns-core-modules/application-settings");
+var Dialogs = require("ui/dialogs");
 
 let page
  
@@ -17,7 +18,7 @@ var obj =  fromObject({
 
 
 exports.onPageLoaded = function(args){
-   alert(appSettings.getString("userCode","vacio"))
+//    alert(appSettings.getString("userCode","vacio"))
     page = args.object
     page.bindingContext = obj
     
@@ -70,13 +71,20 @@ function obtenerDatos(){
                         });
                     }else{
                         obj.taskList.push({
-                            title:'vacio',
+                            title:'No tienes visitas registradas a establecimientos',
                         });
                     }   
                 }
                 obj.set('busy',false)
         }).catch((e) => {
-            alert(e) // imprimir errores
+            // alert(e) 
+            Dialogs.alert({
+                title: "Error de conexion",
+                message: "Por favor, intente acceder al historial de nuevo más tarde.",
+                okButtonText: "Ok"
+            }).then(function () {
+                // console.log("Dialog closed!");
+            });
         })
     }
 }
