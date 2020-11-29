@@ -1,7 +1,7 @@
 
 const { ImageSource } = require("tns-core-modules/image-source");
 const {QrGenerator} = require("nativescript-qr-generator");
-const httpModule = require("tns-core-modules/http");
+var httpModule = require("tns-core-modules/http");
 var appSettings = require("tns-core-modules/application-settings");
 
 
