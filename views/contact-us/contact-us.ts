@@ -10,7 +10,7 @@ let maxDate = new Date();
 let minDate = new Date();
 var page
 
-minDate.setDate(maxDate.getDate()-5)
+minDate.setDate(maxDate.getDate()-15)
 
 exports.onPageLoaded = function(args){
    page = args.object;
@@ -31,18 +31,31 @@ exports.onDatePickerLoaded = function(args){
          }
     }
     
+  
 function enviar(fechaContagio){
    
    httpModule.request({
-      url: "http://10.0.2.2:80/post/create",
+      url: "https://www.covidcinvestav.com/index.php?r=api/avisocontagio",
       method: "POST",
       headers: { "Content-Type": "application/json" },
       content: JSON.stringify({
-         "title":appSettings.getString("userCode","vacio"),
-         "body":fechaContagio
+         "Contagio":
+         {
+            "codigoindividuo":appSettings.getString("userCode","vacio"),
+            "fechacontagio":fechaContagio
+         },
+         "LoginForm":
+         {
+            "username":"negocio",
+            "password":"jvW13%b2020"
+         }
       })
   }).then(response => {
-     console.log(response.content.toJSON());
+
+   if(response.content.toJSON() === true){
+      alert("Diagnóstico recibido");
+   }
+
   }).catch((e) => {
      console.log(e);
      Dialogs.alert({
@@ -61,7 +74,7 @@ function enviar(fechaContagio){
 
 exports.getTap = function () {
     date = page.getViewById("date");
-    var fechaContagio = fecha.format(date.date, 'YYYY-MM-DD');
+    var fechaContagio = fecha.format(date.date, 'YYYY-MM-DD HH:mm:ss');
     const checkBox = page.getViewById('myCheckbox');
    //  alert(fechaContagio+ '\n' +' valor de checkbx = ' + checkBox.checked);
 

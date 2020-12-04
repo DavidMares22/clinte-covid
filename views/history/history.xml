@@ -10,7 +10,7 @@
         <ListView items="{{taskList}}"  orientation="vertical" height="650" >
 
           <ListView.itemTemplate>
-              <Label text="{{title}}" horizontalAlignment="left" verticalAlignment="center" />
+              <Label text="{{title}}" horizontalAlignment="center" verticalAlignment="center" />
           </ListView.itemTemplate>
 
         </ListView>
