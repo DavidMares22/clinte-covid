@@ -1,6 +1,6 @@
 
 var appSettings = require("tns-core-modules/application-settings");
-
+var Dialogs = require("ui/dialogs");
 
 
 var page
@@ -29,7 +29,14 @@ exports.getTap = function () {
     const checkBox = page.getViewById('aceptar');
 
     if(checkBox.checked === false){
-        alert('Debes aceptar el aviso de privacidad');
+        Dialogs.alert({
+            title: "",
+            message: "Debes aceptar el aviso de privacidad.",
+            okButtonText: "Ok"
+        }).then(function () {
+            // console.log("Dialog closed!");
+        });
+        
     }else{
         appSettings.setString("vistoTerminos","Si");
         const options1 = {

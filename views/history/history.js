@@ -32,7 +32,14 @@ exports.onPageLoaded = function(args){
 function obtenerDatos(){
     
     if(appSettings.getString("userCode","vacio")==='vacio'){
-        alert('Necesitas generar un codigo')
+        
+        Dialogs.alert({
+            title: "",
+            message: "Necesitas generar un codigo.",
+            okButtonText: "Ok"
+        }).then(function () {
+            // console.log("Dialog closed!");
+        });
         obj.set('busy',false)
         
     }else{
