@@ -30,7 +30,7 @@ exports.onPageLoaded = function(args){
 }
 
 function obtenerDatos(){
-    
+    obj.set('busy',true)
     if(appSettings.getString("userCode","vacio")==='vacio'){
         
         Dialogs.alert({
