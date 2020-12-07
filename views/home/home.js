@@ -2,8 +2,7 @@ const fromObject = require("tns-core-modules/data/observable").fromObject;
 const ObservableArray = require("tns-core-modules/data/observable-array").ObservableArray;
 var appSettings = require("tns-core-modules/application-settings");
 var httpModule = require("tns-core-modules/http");
-var BackgroundFetch = require("nativescript-background-fetch").BackgroundFetch;
-var LocalNotifications = require("nativescript-local-notifications").LocalNotifications;
+
 
 let page;
 
@@ -87,74 +86,21 @@ function buscarNotificacion(){
 exports.onPageLoaded = onPageLoaded;
 
 function goQR() {
-    BackgroundFetch.configure({
-        minimumFetchInterval: 1,
-        stopOnTerminate: false,
-        startOnBoot: true,
-        enableHeadless: false,
-        
-    }, () => {
-
-        LocalNotifications.schedule([{
-            id: 1,
-            title: 'The first title',
-            body: 'The first  body',
-            ticker: 'The ticker',
-            badge: 1,
-            sound: "sound1", //sound1 from /Appresources/raw/ folder
-            at: new Date(new Date().getTime() + (1 * 1000)) 
-          }]).then(
-              function() {
-                console.log("Notification scheduled 1");
-              },
-              function(error) {
-                console.log("scheduling error: " + error);
-              }
-          )
-        console.log("[BackgroundFetch] Event Received!");
-      
-        // BackgroundFetch.finish();
-    }, (error) => {
-        console.log("[BackgroundFetch] FAILED");
-        console.log(error);
-    });
-      
-    BackgroundFetch.start(() => {
-      
-        console.log("BackgroundFetch successfully started");
-    }, (status) => {
-        console.log("BackgroundFetch failed to start: ", status);
-    });
-      
-    // page.frame.navigate("views/qr-view/qr-view");
+  
+    page.frame.navigate("views/qr-view/qr-view");
 }
 
 exports.goQR = goQR;
 
 function goContact() {
-    LocalNotifications.schedule([{
-        id: 1,
-        title: 'The first title',
-        body: 'The first  body',
-        ticker: 'The ticker',
-        badge: 1,
-        sound: "sound1", //sound1 from /Appresources/raw/ folder
-        at: new Date(new Date().getTime() + (1 * 1000)) 
-      }]).then(
-          function() {
-            console.log("Notification scheduled 1");
-          },
-          function(error) {
-            console.log("scheduling error: " + error);
-          }
-      )
-    // page.frame.navigate("views/contact-us/contact-us");
+    
+    page.frame.navigate("views/contact-us/contact-us");
 }
 exports.goContact = goContact;
 
 function goToHistory() {
-    BackgroundFetch.finish();
-    // page.frame.navigate("views/history/history");
+    
+    page.frame.navigate("views/history/history");
 }
 
 
