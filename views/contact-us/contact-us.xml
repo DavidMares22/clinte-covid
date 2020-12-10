@@ -1,14 +1,16 @@
 
 <page loaded="onPageLoaded" xmlns:CheckBox="@nstudio/nativescript-checkbox">
-<ActionBar title="Comunicar diagnóstico" icon="">
+<ActionBar >
         
       <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
+      <Label text="Comunicar diagnóstico" width="100%" class="h2 text-center white" />
     </ActionBar>
 <StackLayout class="p-20">
 
  
 
-<Label text="Ingresa la fecha en la que diste positivo a COVID-19" textWrap="true" class="h3 text-center"/>
+<Label text="Esta sección es únicamente en caso de haber dado positivo a COVID-19 en los últimos días. " textWrap="true" class="h3 "/>
+<Label text="Ingresa la fecha en la que te confirmaron que diste positivo a COVID-19." textWrap="true" class="h3 "/>
 <!-- <DatePicker year="1980" month="4" day="20" class="date-picker" id="date" loaded="onDatePickerLoaded"></DatePicker> -->
 <DatePicker minDate="{{minDate}}"
             maxDate="{{maxDate}}"

@@ -2,7 +2,7 @@
 <page loaded="onPageLoaded"  navigatedTo="onNavigatedTo" xmlns:CheckBox="@nstudio/nativescript-checkbox">
 
 <ActionBar>
-<Label text="Aviso de privacidad" width="100%" class="h2 text-center" />
+<Label text="Aviso de privacidad" width="100%" class="h2 text-center white" />
 </ActionBar>
 
     

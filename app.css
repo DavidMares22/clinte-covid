@@ -23,3 +23,26 @@ The following CSS rule changes the font size of all Buttons that have the
 Button.-primary {
     font-size: 18;
 }
+
+ActionBar {
+    background-color:  #1faaa5;
+    
+}
+
+.white {
+    color: white;
+    
+}
+
+.orange {
+    color:#ed7d31;
+}
+
+.line {
+    background: black;
+    height: 2px;
+}
+
+.margin-top-five{
+    margin-top: 10px;
+  }

@@ -9,24 +9,27 @@ let page;
 var obj = fromObject({
     taskList : new ObservableArray([
     ]), 
-    IsBusy:true
+    IsBusy:true,
+    
 });
 function onPageLoaded(args) {
     page = args.object;
+    page.bindingContext = obj;
     
-    page.bindingContext = obj
-    obj.set('IsBusy',true)
+    
+    
+    obj.set('IsBusy',true);
     
      while((obj.taskList).length){
          obj.taskList.pop()
-     }
-    
-    // let keys = appSettings.getAllKeys() 
-    // alert(keys)
-
-    buscarNotificacion();
-
-
+        }
+        
+        // let keys = appSettings.getAllKeys() 
+        // alert(keys)
+        
+        buscarNotificacion();
+        
+        console.log(appSettings.getString("userCode","vacio"))
     //  page.bindingContext = {
     //     codigo:appSettings.getString("userCode","vacio")
     // }
@@ -55,17 +58,21 @@ function buscarNotificacion(){
   
         }).then(data => {
             if(data.length){  // 2 o más elementos
+                
                 data.forEach((task)=>{
                     obj.taskList.push({
                         title:(task.nombre +' - '+task.fechavisita+ ' #'+task.idvisita),
+                        style:false
                     })
                 })
             }else{
-               
-                    obj.taskList.push({
-                        title:'No tienes nuevas notificaciones',
-                    });
-                  
+                
+                obj.taskList.push({
+                    title:'No tienes nuevas notificaciones',
+                    style:true
+                });
+                
+                    
             }
             // console.log(data)
             obj.set('IsBusy',false)

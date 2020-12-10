@@ -1,27 +1,37 @@
 <page loaded="onPageLoaded">
 
 
-<!-- <ActionBar title="SCAE" class="text-center"></ActionBar> -->
-<ActionBar>
-<Label text="SCAE" width="100%" class="h2 text-center" />
-</ActionBar>
+    <!-- <ActionBar title="SCAE" class="text-center"></ActionBar> -->
+    <ActionBar>
+        <Label text="SCAE" width="100%" class="h2 text-center white" />
+    </ActionBar>
 
     <StackLayout>
-        <!-- <Label text="{{codigo}}" width="100%" class="h2 text-center" backgroundColor="yellow"/> -->
-        
-        <Button class="btn" text="Ver codigo QR" tap="goQR" ></Button>
-        <Button class="btn" text="Comunicar diagnóstico" tap="goContact" ></Button>
-        <Button class="btn" text="Historial" tap="goToHistory" ></Button>
 
-            <Label text="Notificaciones de posible contagio" width="100%" class="h3 text-center"/>
-        <ActivityIndicator busy="{{IsBusy}}" color="red" width="100" height="100" visibility="{{ IsBusy? 'visible' : 'collapsed' }}"></ActivityIndicator>
-        <ListView items="{{taskList}}"  orientation="vertical" height="650" >
-          <ListView.itemTemplate>
-              <Label text="{{title}}" color="white" horizontalAlignment="center" verticalAlignment="center" backgroundColor="red"/>
-          </ListView.itemTemplate>
-
+        <Label text="Notificaciones de posible contagio" width="100%" class="h3 text-center margin-top-five"/>
+        <ActivityIndicator busy="{{IsBusy}}" color="#ed7d31" width="60" height="60" visibility="{{ IsBusy? 'visible' : 'collapsed' }}"></ActivityIndicator>
+        <ListView items="{{taskList}}" orientation="vertical" height="60">
+            <ListView.itemTemplate>
+                <Label text="{{title}}" horizontalAlignment="center" verticalAlignment="center"  color="{{style? 'black' : 'white' }}" backgroundColor="{{ style? 'white' : 'red' }}"/>
+            </ListView.itemTemplate>
         </ListView>
-        <!-- <Button text="remover almacenamiento" class="bg-danger" tap="removerCodigo" ></Button> -->
+        <label class="line"></label>
+        <!-- <Label text="Para realizar tu check-In muestra tu código QR" textWrap="true" class="h3 text-center"/> -->
+        <Label class="h3 p-15 m-10 text-center" textWrap="true">
+            <FormattedString>
+                <Span text="Para realizar tu " ></Span>
+                <Span text="check-in "  fontWeight="Bold"></Span>
+                <Span text="muestra tu código QR " ></Span>
+                
+            </FormattedString>
+        </Label>
+        <Button class="btn white" text="Ver código QR" tap="goQR" backgroundColor="#ed7d31"></Button>
+        <label class="line m-15"></label>
+        <Button class="btn" text="Historial" tap="goToHistory"></Button>
+        <Button class="btn" text="Comunicar diagnóstico" tap="goContact"></Button>
+
+
+        <!-- <Button text="remover almacenamiento" class="bg-danger" tap="removerCodigo"></Button> -->
     </StackLayout>
 </page>
 
