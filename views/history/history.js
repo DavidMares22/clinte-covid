@@ -35,7 +35,7 @@ function obtenerDatos(){
         
         Dialogs.alert({
             title: "",
-            message: "Necesitas generar un codigo.",
+            message: "Necesitas generar un código.",
             okButtonText: "Ok"
         }).then(function () {
             // console.log("Dialog closed!");
