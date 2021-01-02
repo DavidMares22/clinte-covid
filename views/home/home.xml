@@ -29,6 +29,7 @@
         <label class="line m-15"></label>
         <Button class="btn" text="Historial" tap="goToHistory"></Button>
         <Button class="btn" text="Comunicar diagnóstico" tap="goContact"></Button>
+        <Button class="btn" text="Mapa" tap="goMapa"></Button>
 
 
         <!-- <Button text="remover almacenamiento" class="bg-danger" tap="removerCodigo"></Button> -->

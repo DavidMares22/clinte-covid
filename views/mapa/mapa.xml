@@ -1,0 +1,19 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:maps="nativescript-google-maps-sdk" loaded="pageLoaded">
+ <ActionBar>
+<Label text="Mapa" width="100%" class="h2 text-center white" />
+
+        
+      <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="backHome"/>
+    </ActionBar>
+    <GridLayout>
+        <maps:mapView
+			latitude="{{ latitude }}" longitude="{{ longitude }}"
+			zoom="{{ zoom }}" minZoom="{{ minZoom }}" maxZoom="{{ maxZoom }}"
+			
+            mapReady="onMapReady"
+		>
+             
+         
+        </maps:mapView>
+    </GridLayout>
+</Page>

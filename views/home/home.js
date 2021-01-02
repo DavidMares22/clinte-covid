@@ -113,6 +113,14 @@ function goToHistory() {
 
 exports.goToHistory = goToHistory;
 
+function goMapa() {
+    
+    page.frame.navigate("views/mapa/mapa");
+}
+
+
+exports.goMapa = goMapa;
+
 
 
 
