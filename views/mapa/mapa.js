@@ -4,7 +4,6 @@ import * as mapsModule from "nativescript-google-maps-sdk";
 import * as geolocation from "nativescript-geolocation";
 var httpModule = require("tns-core-modules/http");
 
-
 let vmModule;
 var page;
 
@@ -40,6 +39,7 @@ export async function getRecomendation(result) {
             longitude: element.longitude,
             store: element.store,
             estimated_congestion: element.estimated_congestion,
+            distance: element.distance
           });
         });
         // console.log(rec)
@@ -54,7 +54,7 @@ export async function getRecomendation(result) {
 }
 
 var mapView = null;
-var results;
+
 export function onMapReady(args) {
   mapView = args.object;
 
@@ -82,6 +82,47 @@ export function onMapReady(args) {
                   //   console.log("loc result", result);
                   vmModule.set("latitude", result.latitude);
                   vmModule.set("longitude", result.longitude);
+
+                  getRecomendation(result)
+                    .then((r) => {
+                      if (r.length > 0) {
+                        var markers = [];
+                        for (var i = 0; i < r.length; i++) {
+                          markers[i] = new mapsModule.Marker();
+                          markers[
+                            i
+                          ].position = mapsModule.Position.positionFromLatLng(
+                            r[i].latitude,
+                            r[i].longitude
+                          );
+                          // markers[i].title = r[i].store;
+                          // markers[i].snippet = r[i].estimated_congestion;
+
+                          markers[i].title = JSON.stringify(r[i].store);
+                          markers[i].snippet = JSON.stringify(
+                            `congestion: ${r[i].estimated_congestion}
+                             distancia: ${r[i].distance}
+                            `
+                          );
+                          
+                          if(r[i].estimated_congestion <= 0.5){
+                            markers[i].color = "green";
+                            
+                          }else if(r[i].estimated_congestion <= 0.8){
+                            markers[i].color = "yellow";
+                            
+                          }else{
+                            markers[i].color = "red";
+      
+                          };
+
+                          mapView.addMarker(markers[i]);
+                        }
+                      }
+                    })
+                    .catch((e) => {
+                      alert(e);
+                    });
                 })
                 .catch((e) => {
                   console.log("loc error", e);
@@ -104,7 +145,7 @@ export function onMapReady(args) {
             maximumAge: 5000,
             timeout: 20000,
           })
-          .then(async (result) => {
+          .then((result) => {
             // console.log("loc result", result);
             vmModule.set("latitude", result.latitude);
             vmModule.set("longitude", result.longitude);
@@ -115,20 +156,33 @@ export function onMapReady(args) {
                   var markers = [];
                   for (var i = 0; i < r.length; i++) {
                     markers[i] = new mapsModule.Marker();
-                    markers[i].position = mapsModule.Position.positionFromLatLng(
+                    markers[
+                      i
+                    ].position = mapsModule.Position.positionFromLatLng(
                       r[i].latitude,
                       r[i].longitude
                     );
                     // markers[i].title = r[i].store;
                     // markers[i].snippet = r[i].estimated_congestion;
-                    
+
                     markers[i].title = JSON.stringify(r[i].store);
-                    markers[i].snippet = JSON.stringify(r[i].estimated_congestion);
-                    markers[i].color = "blue";
+                    markers[i].snippet = 
+                      `congestion: ${r[i].estimated_congestion} distancia: ${r[i].distance}
+                      `
+                    ;
+                    if(r[i].estimated_congestion <= 0.5){
+                      markers[i].color = "green";
+                      
+                    }else if(r[i].estimated_congestion <= 0.8){
+                      markers[i].color = "yellow";
+                      
+                    }else{
+                      markers[i].color = "red";
+
+                    }
 
                     mapView.addMarker(markers[i]);
                   }
-                  
                 }
               })
               .catch((e) => {
