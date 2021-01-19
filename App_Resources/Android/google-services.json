@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "971531995595",
+    "project_id": "marine-equinox-280213",
+    "storage_bucket": "marine-equinox-280213.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971531995595:android:8883dafa82ee8fe7db0e4e",
+        "android_client_info": {
+          "package_name": "org.nativescript.cliente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971531995595-f9uoenv3pukr9useoa6jo8obql3v48lv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD9MdqCxcRrUBAtA_uMecmaEhggmVNLAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971531995595-f9uoenv3pukr9useoa6jo8obql3v48lv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

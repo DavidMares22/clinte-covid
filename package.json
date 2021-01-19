@@ -1,0 +1,45 @@
+{
+  "name": "@nativescript/template-hello-world-ts",
+  "main": "app.js",
+  "version": "7.0.4",
+  "author": "NativeScript Team <oss@nativescript.org>",
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "nativescript",
+    "mobile",
+    "{N}",
+    "template"
+  ],
+  "repository": "<fill-your-repository-here>",
+  "bugs": {
+    "url": "https://github.com/NativeScript/NativeScript/issues"
+  },
+  "homepage": "https://github.com/NativeScript/nativescript-app-templates",
+  "dependencies": {
+    "@nativescript/core": "~7.0.0",
+    "@nativescript/theme": "~2.3.0",
+    "@nstudio/nativescript-checkbox": "^2.0.4",
+    "fecha": "^4.2.0",
+    "nativescript-background-fetch": "^1.2.1",
+    "nativescript-geolocation": "^5.1.0",
+    "nativescript-google-maps-sdk": "^3.0.2",
+    "nativescript-local-notifications": "^4.2.1",
+    "nativescript-permissions": "^1.3.11",
+    "nativescript-plugin-firebase": "^10.6.3",
+    "nativescript-qr-generator": "^2.0.0",
+    "nativescript-ui-dataform": "^7.0.2"
+  },
+  "devDependencies": {
+    "@nativescript/android": "7.0.1",
+    "@nativescript/types": "~7.0.0",
+    "@nativescript/webpack": "~3.0.0",
+    "typescript": "~3.9.0"
+  },
+  "gitHead": "d7a99d29dacb985b063a25760ae991ede11fbff3",
+  "private": "true",
+  "readme": "NativeScript Application"
+}

@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "es2017",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "skipLibCheck": true,
+        "lib": [
+            "es2017",
+            "dom",
+            "es6"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "~/*": [
+                "app/*",
+            ],
+            "*": [ 
+                "./node_modules/tns-core-modules/*", 
+                "./node_modules/*" 
+            ], 
+        },
+    },
+    "exclude": [
+        "node_modules",
+        "platforms"
+    ]
+}
