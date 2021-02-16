@@ -115,7 +115,7 @@ exports.goToHistory = goToHistory;
 
 function goMapa() {
     
-    page.frame.navigate("views/mapa/mapa");
+    page.frame.navigate("views/rubros/rubros");
 }
 
 

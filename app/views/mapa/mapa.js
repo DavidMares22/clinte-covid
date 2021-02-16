@@ -15,15 +15,16 @@ export function pageLoaded(args) {
 
 export async function getRecomendation(result) {
   return new Promise((resolve, reject) => {
-      // alert(`${result.latitude} ${result.longitude}`);
+    // alert(`${result.latitude} ${result.longitude}`);
     let rec = [];
     httpModule
       .request({
-        url: "http://10.0.2.2:5000/recommendation",
-        // url: "http://192.168.1.67:5000/recommendation",
+        // url: "http://10.0.2.2:5000/recommendation",
+        url: "http://192.168.1.67:5000/recommendation",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({
+          id_rubro: 28,
           latitude: result.latitude,
           longitude: result.longitude,
         }),
@@ -49,7 +50,7 @@ export async function getRecomendation(result) {
       })
       .catch((e) => {
         console.log("sooo", e);
-        
+
         reject(e);
       });
   });
@@ -81,7 +82,7 @@ export function onMapReady(args) {
                   timeout: 20000,
                 })
                 .then((result) => {
-                  //   console.log("loc result", result);
+                  console.log("loc result", result);
                   vmModule.set("latitude", result.latitude);
                   vmModule.set("longitude", result.longitude);
 
@@ -99,12 +100,16 @@ export function onMapReady(args) {
                           );
                           // markers[i].title = r[i].store;
                           // markers[i].snippet = r[i].estimated_congestion;
-      
+
                           markers[i].title = JSON.stringify(r[i].store);
-                          markers[i].congestion = `Congestion: ${r[i].estimated_congestion}`;
-                          markers[i].distance = `Distancia: ${r[i].distance}`
-                          console.log( `congestion: ${r[i].estimated_congestion} distancia: ${r[i].distance}`)
-      
+                          markers[
+                            i
+                          ].congestion = `Congestion: ${r[i].estimated_congestion}`;
+                          markers[i].distance = `Distancia: ${r[i].distance}`;
+                          console.log(
+                            `congestion: ${r[i].estimated_congestion} distancia: ${r[i].distance}`
+                          );
+
                           mapView.infoWindowTemplate = `<StackLayout orientation="vertical" width="200" height="150" >
                             <Label text="{{title}}" className="title" width="200"   />
                             <Label text="{{congestion}}" className="title" width="200"   />
@@ -113,7 +118,7 @@ export function onMapReady(args) {
                             <Label text="{{'LON: ' + position.longitude}}" className="infoWindowCoordinates"  />                      
                             
                         </StackLayout>`;
-      
+
                           if (r[i].estimated_congestion <= 0.5) {
                             markers[i].color = "green";
                           } else if (r[i].estimated_congestion <= 0.8) {
@@ -121,8 +126,8 @@ export function onMapReady(args) {
                           } else {
                             markers[i].color = "red";
                           }
-      
-                          mapView.addMarker(markers[i]);
+
+                           mapView.addMarker(markers[i]);
                         }
                       }
                     })
@@ -152,7 +157,7 @@ export function onMapReady(args) {
             timeout: 20000,
           })
           .then((result) => {
-            // console.log("loc result", result);
+            console.log("loc result", result);
             vmModule.set("latitude", result.latitude);
             vmModule.set("longitude", result.longitude);
 
@@ -172,9 +177,13 @@ export function onMapReady(args) {
                     // markers[i].snippet = r[i].estimated_congestion;
 
                     markers[i].title = JSON.stringify(r[i].store);
-                    markers[i].congestion = `Congestion: ${r[i].estimated_congestion}`;
-                    markers[i].distance = `Distancia: ${r[i].distance}`
-                    console.log( `congestion: ${r[i].estimated_congestion} distancia: ${r[i].distance}`)
+                    markers[
+                      i
+                    ].congestion = `Congestion: ${r[i].estimated_congestion}`;
+                    markers[i].distance = `Distancia: ${r[i].distance}`;
+                    console.log(
+                      `congestion: ${r[i].estimated_congestion} distancia: ${r[i].distance}`
+                    );
 
                     mapView.infoWindowTemplate = `<StackLayout orientation="vertical" width="200" height="150" >
                       <Label text="{{title}}" className="title" width="200"   />
