@@ -24,9 +24,15 @@ exports.onPageLoaded = function (args) {
 
 function onItemTap(args) {
   const index = args.index;
-  console.log(obj.taskList.getItem(index));
-
-//   alert(`ListView item tap ${obj.taskList.getItem(index)}`);
+//   console.log(obj.taskList.getItem(index));
+  var navigationOptions={
+    moduleName:"views/mapa/mapa",
+    context:{rubroId: obj.taskList.getItem(index).id,
+            
+            }
+}
+  page.frame.navigate(navigationOptions);
+//   alert(`ListView item tap ${obj.taskList.getItem(index).id}`);
 }
 exports.onItemTap = onItemTap;
 
@@ -35,7 +41,8 @@ function obtenerDatos() {
 
   httpModule
     .request({
-      url: "http://192.168.1.67:5000/rubro",
+      // url: "http://192.168.1.67:5000/rubro",
+      url: "http://192.168.100.3:5000/rubro",
       method: "POST",
       headers: { "Content-Type": "application/json" },
       //   content: JSON.stringify({}),
@@ -47,7 +54,7 @@ function obtenerDatos() {
       data["rubro:"].forEach((task) => {
         // console.log(task.decription);
         obj.taskList.push({
-          title: task.decription,
+          title: task.id+" "+task.decription,
           id: task.id,
         });
       });

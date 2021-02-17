@@ -6,11 +6,15 @@ var httpModule = require("tns-core-modules/http");
 
 let vmModule;
 var page;
+var gotData;
 
 export function pageLoaded(args) {
   page = args.object;
   vmModule = new HelloWorldModel();
   page.bindingContext = vmModule;
+  gotData=page.navigationContext;
+  // console.log(gotData.rubroId);
+  
 }
 
 export async function getRecomendation(result) {
@@ -20,11 +24,12 @@ export async function getRecomendation(result) {
     httpModule
       .request({
         // url: "http://10.0.2.2:5000/recommendation",
-        url: "http://192.168.1.67:5000/recommendation",
+        // url: "http://192.168.1.67:5000/recommendation",
+        url: "http://192.168.100.3:5000/recommendation",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({
-          id_rubro: 28,
+          id_rubro: gotData.rubroId,
           latitude: result.latitude,
           longitude: result.longitude,
         }),
