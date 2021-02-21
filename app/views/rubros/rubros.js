@@ -41,13 +41,15 @@ function obtenerDatos() {
 
   httpModule
     .request({
-      // url: "http://192.168.1.67:5000/rubro",
-      url: "http://192.168.100.3:5000/rubro",
+      // url: "http://192.168.1.70:5000/rubro",
+      // url: "http://192.168.100.3:5000/rubro",
+      url: "http://10.0.2.2:5000/rubro",
       method: "POST",
       headers: { "Content-Type": "application/json" },
       //   content: JSON.stringify({}),
     })
     .then((response) => {
+      console.log("hola")
       return JSON.parse(response.content);
     })
     .then((data) => {

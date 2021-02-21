@@ -23,9 +23,9 @@ export async function getRecomendation(result) {
     let rec = [];
     httpModule
       .request({
-        // url: "http://10.0.2.2:5000/recommendation",
-        // url: "http://192.168.1.67:5000/recommendation",
-        url: "http://192.168.100.3:5000/recommendation",
+        url: "http://10.0.2.2:5000/recommendation",
+        // url: "http://192.168.1.70:5000/recommendation",
+        // url: "http://192.168.100.3:5000/recommendation",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({
